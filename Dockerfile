@@ -36,6 +36,6 @@ RUN export LANGUAGE=en_US.UTF-8 &&\
 
 # Disable Host Key verification.
 RUN mkdir -p ~/.ssh
-RUN echo -e "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+RUN echo "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
 
 CMD "/bin/bash"

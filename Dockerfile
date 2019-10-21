@@ -8,7 +8,7 @@ RUN apt-get install --assume-yes apt-utils
 RUN apt-get install --assume-yes vim apt-transport-https unzip
 
 RUN pip install filemagic wheel pycurl selenium flask flask_sqlalchemy flask_bcrypt flask_login flask_uploads celery flask_wtf flask-marshmallow marshmallow-sqlalchemy
-RUN pip install jsonschema requests
+RUN pip install jsonschema requests scp paramiko tavern pytest
 
 # install chrome
 RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \

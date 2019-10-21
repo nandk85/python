@@ -27,4 +27,15 @@ RUN wget -N http://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.s
   && chown root:root /usr/local/bin/chromedriver \
   && chmod 0755 /usr/local/bin/chromedriver
 
+# setup default locale to US UTF-8
+RUN export LANGUAGE=en_US.UTF-8 &&\
+    export LANG=en_US.UTF-8 &&\
+    export LC_ALL=en_US.UTF-8 &&\
+    locale-gen en_US.UTF-8 &&\
+    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales
+
+# Disable Host Key verification.
+RUN mkdir -p ~/.ssh
+RUN echo -e "Host *\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
+
 CMD "/bin/bash"

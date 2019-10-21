@@ -4,7 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install tools required to build the project
 RUN apt-get update
-RUN apt-get install --assume-yes apt-utils
+RUN apt-get install --assume-yes apt-utils locales
 RUN apt-get install --assume-yes vim apt-transport-https unzip
 
 RUN pip install filemagic wheel pycurl selenium flask flask_sqlalchemy flask_bcrypt flask_login flask_uploads celery flask_wtf flask-marshmallow marshmallow-sqlalchemy
